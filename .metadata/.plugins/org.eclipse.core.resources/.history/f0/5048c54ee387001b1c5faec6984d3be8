@@ -1,0 +1,74 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkForm(){
+		var name = document.getElementById("name");  		//name
+		var birth = document.getElementById("birth");  		//email => id로 사용!
+		var email = document.getElementById("email");  		//email => id로 사용!
+		var pw = document.getElementById("pw");  			//pw
+		var pwcheck = document.getElementById("pwcheck");  	//pwcheck
+
+		
+		if(name.value == ""){
+			alert("이름을 입력하세요");
+			return false;
+		}
+		if(birth.value == ""){
+			alert("생년월일을 입력하세요");
+			return false;
+		}
+		if(email.value == ""){
+			alert("이메일을 입력하세요");
+			return false;
+		}
+		if(pw.value == ""){
+			alert("비밀번호를 입력하세요");
+			return false;
+		}
+		if(pwcheck.value == ""){
+			alert("비밀번호확인을 위하여 다시한번 입력해주세요");
+			return false;
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+<h2>회원가입</h2>
+
+<form name="form" action="" onsubmit="return checkForm()">
+	<table border="1">
+		<tr>
+			<td>이름</td>
+			<td><input type="text" id="name" name="name"></td>
+		</tr>
+		<tr>
+			<td>생년월일</td>
+			<td><input type="text" id="birth" name="birth"></td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td><input type="text" id="email" name="email"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="text" id="pw" name="pw"></td>
+		</tr>
+		<tr>
+			<td>비밀번호확인</td>
+			<td><input type="text" id="pwcheck" name="pwcheck"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="가입"><input type="reset" value="취소"></td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function join(){
+		location.href = "join.do";
+	}
+	
+	function checkForm(){
+		form.email.value = form.email.value.trim();
+		
+		if(form.name.value == "" || form.name.value.length == 0){
+			alert("아이디를 입력하세요");
+			form.name.focus();
+			return false;
+		}
+		
+		form.pw.value = form.pw.value.trim();
+		
+		if(form.pw.value == "" || form.pw.value.length == 0){
+			alert("패스워드를 입력하세요");
+			form.pw.focus();
+			return false;
+		}
+		
+		return true;
+	}
+</script>
+<body>
+<h2>로그인</h2>
+
+<form name="form" action="login.do" onsubmit="return checkForm()">
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td><input type="text" id="email" name="email"/></td>
+		</tr>
+		<tr>
+			<td>PW</td>
+			<td><input type="password" id="pw" name="pw"/></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="로그인"/><button type="button" onclick="join();">회원가입</button></td>
+		</tr>
+	</table>
+
+</form>
+
+</body>
+</html>

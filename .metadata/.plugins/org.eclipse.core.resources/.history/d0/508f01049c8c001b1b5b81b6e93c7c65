@@ -1,0 +1,30 @@
+package com.myspring.dsgproj.controller.board;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.myspring.dsgproj.dto.board.BoardDTO;
+
+@Controller
+@RequestMapping("/board/*")
+public class BoardController {
+
+	@Autowired
+	SqlSession sqlSession; 
+	
+	@RequestMapping("list.do")
+	public String list(Model model) {
+		
+		System.out.println("board/list.do start...");
+		
+		List<BoardDTO> selectAll = sqlSession.selectList("board.selectAll");
+		
+		model.addAttribute("selectAll", selectAll);
+		return "board/list";
+	}
+}

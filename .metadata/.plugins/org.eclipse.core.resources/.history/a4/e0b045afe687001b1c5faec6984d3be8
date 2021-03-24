@@ -1,0 +1,83 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkForm(){
+		
+		form.
+
+/* 		var check_num = /[0-9]/; // 숫자
+		var check_eng = /[a-zA-Z]/; // 문자 
+		var check_spc = /[~!@#$%^&*()_+|<>?:{}]/; // 특수문자 
+		var check_kor = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/; // 한글체크
+ */
+		
+		
+		if(form.name.value == "" || form.name.value.length == 0){
+			alert("이름을 입력하세요");
+			form.name.focus();
+			return false;
+		}
+				
+		if(form.birth.value == "" || form.birth.length == 0){
+			alert("생년월일을 입력하세요");
+			form.birth.focus();
+			return false;
+		}
+		if(form.email.value == "" || form.name.email.length == 0){
+			alert("이메일을 입력하세요");
+			form.email.focus();
+			return false;
+		}
+		if(form.pw.value == "" || form.pw.length == 0){
+			alert("비밀번호를 입력하세요");
+			form.pw.focus();
+			return false;
+		}
+		if(form.pwcheck.value == "" || form.pwcheck.length == 0){
+			alert("비밀번호확인을 위하여 다시한번 입력해주세요");
+			form.pwcheck.focus();
+			return false;
+		}
+		
+	}
+	
+</script>
+</head>
+<body>
+<h2>회원가입</h2>
+
+<form name="form" action="" onsubmit="return checkForm()">
+	<table border="1">
+		<tr>
+			<td>이름</td>
+			<td><input type="text" id="name" name="name"></td>
+		</tr>
+		<tr>
+			<td>생년월일</td>
+			<td><input type="text" id="birth" name="birth"></td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td><input type="text" id="email" name="email"></td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td><input type="text" id="pw" name="pw"></td>
+		</tr>
+		<tr>
+			<td>비밀번호확인</td>
+			<td><input type="text" id="pwcheck" name="pwcheck"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"><input type="submit" value="가입"><input type="reset" value="취소"></td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

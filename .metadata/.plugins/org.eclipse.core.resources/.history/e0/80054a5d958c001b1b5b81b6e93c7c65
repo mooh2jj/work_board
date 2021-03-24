@@ -1,0 +1,5 @@
+package com.myspring.dsgproj.dto.board;
+
+public class BoardDTO {
+
+}

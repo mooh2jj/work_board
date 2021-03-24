@@ -1,0 +1,5 @@
+package com.myspring.dsgproj.controller.board;
+
+public class BoardController {
+
+}

@@ -1,0 +1,5 @@
+package com.myspring.dsgproj.controller;
+
+public class MemberController {
+
+}
