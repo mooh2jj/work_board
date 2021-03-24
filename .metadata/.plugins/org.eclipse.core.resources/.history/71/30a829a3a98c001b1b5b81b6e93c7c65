@@ -17,7 +17,7 @@ $(function(){
 		$.post("/member/pwcheck.do",
 				{"pw": $('#pw').val()},
 				function(result, status){
-					/* alert(parseInt(result)); */
+					alert(parseInt(result));
 					
 					if(parseInt(result) == 1){
 						$(".id-msg2").show();

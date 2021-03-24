@@ -14,10 +14,10 @@ $(function(){
 	$(".id-msg2").hide(); 
 	
 	$("#pw").blur(function(){
-		$.post("/member/pwcheck.do",
+		$.post("/member/emailcheck.do",
 				{"pw": $('#pw').val()},
 				function(result, status){
-					/* alert(parseInt(result)); */
+					alert(parseInt(result));
 					
 					if(parseInt(result) == 1){
 						$(".id-msg2").show();

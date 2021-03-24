@@ -13,11 +13,11 @@ $(function(){
 	$(".id-msg1").hide();
 	$(".id-msg2").hide(); 
 	
-	$("#pw").blur(function(){
-		$.post("/member/pwcheck.do",
-				{"pw": $('#pw').val()},
+	$("#email").blur(function(){
+		$.post("/member/emailcheck.do",
+				{"email": $('#email').val()},
 				function(result, status){
-					/* alert(parseInt(result)); */
+					alert(parseInt(result));
 					
 					if(parseInt(result) == 1){
 						$(".id-msg2").show();
@@ -25,9 +25,9 @@ $(function(){
 					}else{
 						$(".id-msg1").show();
 						$(".id-msg2").hide();
-					}
-				});
-		});
+				}	
+		);
+	});
 });
 
 	function checkForm(){
@@ -148,16 +148,13 @@ $(function(){
 			<th>이메일</th>
 			<td>
 				<input type="text" id="email" name="email" placeholder="이메일을 입력해주세요." style="width:270px;">
-				
+				<span class="id-msg1" style="color:blue; font-size:0.8rem;">멋진 아이디! 사용가능한 아이디입니다!</span>
+				<span class="id-msg2" style="color:red; font-size:0.8rem;">사용중이거나 휴먼상태인 아이디입니다!</span>	
 			</td>
 		</tr>
 		<tr>
 			<th>비밀번호</th>
-			<td>
-				<input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요." style="width:270px;">
-				<span class="id-msg1" style="color:blue; font-size:0.8rem;">사용가능한 비밀번호입니다!</span>
-				<span class="id-msg2" style="color:red; font-size:0.8rem;">이미 사용중인 비밀번호입니다!</span>	
-			</td>
+			<td><input type="password" id="pw" name="pw" placeholder="비밀번호를 입력해주세요." style="width:270px;"></td>
 		</tr>
 		<tr>
 			<th>비밀번호확인</th>
@@ -169,8 +166,8 @@ $(function(){
 	</table>
 </form>
 
-	<script type="text/javascript">
-/* 	$(document).ready(function(){
+<!-- 	<script type="text/javascript">
+	$(document).ready(function(){
 		var form = $("#form");
 		
 		$("#emailAuth").on("click", function(e){
@@ -179,9 +176,9 @@ $(function(){
 			form.attr("method","post");
 			form.submit();
 		});
-	}); */
-
-	</script>
+	});
+	
+	</script> -->
 
 </body>
 </html>

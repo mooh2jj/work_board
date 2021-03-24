@@ -13,11 +13,11 @@ $(function(){
 	$(".id-msg1").hide();
 	$(".id-msg2").hide(); 
 	
-	$("#pw").blur(function(){
-		$.post("/member/pwcheck.do",
-				{"pw": $('#pw').val()},
+	$("#email").blur(function(){
+		$.post("/member/emailcheck.do",
+				{"email": $('#email').val()},
 				function(result, status){
-					/* alert(parseInt(result)); */
+					alert(parseInt(result));
 					
 					if(parseInt(result) == 1){
 						$(".id-msg2").show();

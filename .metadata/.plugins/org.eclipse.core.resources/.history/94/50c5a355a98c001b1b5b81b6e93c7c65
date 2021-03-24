@@ -21,14 +21,6 @@
 		;
 	</select>
 
-	<!-- member.pwcheck -->
-	<select id="pwcheck" resultType="int">
-		SELECT count(*) FROM dsg_member
-		WHERE 1=1
-		AND pw = #{pw}
-		;
-	</select>
-	
 	<update id="getKey" parameterType="Map">
 		update dsg_member set
 		userKey = #{userKey}
